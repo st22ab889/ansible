@@ -1,0 +1,15 @@
+---
+- name: the first play example
+  hosts: master
+  remote_user: root
+  tasks:
+    - name: install nginx package
+      # present 表示如果这个软件已经安装,那么这个软件不安装也不升级;没有这个软件就安装上
+      yum: name=nginx state=present
+    - name: copy nginx.conf to remote server
+      copy: src=nginx.conf dest=/etc/nginx/nginx.conf
+    - name: start nginx server
+      systemd:
+        name: nginx
+        enabled: true
+        state: started

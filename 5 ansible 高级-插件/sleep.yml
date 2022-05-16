@@ -1,0 +1,5 @@
+- hosts: all
+  gather_facts: no
+  tasks:
+    - name: sleep 2 seconds
+      shell: sleep 2

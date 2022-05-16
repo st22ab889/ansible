@@ -1,0 +1,8 @@
+[node]
+192.168.32.101
+
+[allHosts:children]
+node
+
+[allHosts:vars]
+name=static-02-vars

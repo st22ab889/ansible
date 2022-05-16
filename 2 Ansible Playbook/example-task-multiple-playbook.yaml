@@ -1,0 +1,19 @@
+---
+- name: the first play example
+  hosts: master
+  remote_user: root
+  tasks:
+    - name: install nginx package
+      yum: name=nginx state=present
+    - name: copy nginx.conf to remote server
+      copy: src=nginx.conf dest=/etc/nginx/nginx.conf
+    - name: start nginx server
+      systemd:
+        name: nginx
+        enabled: true
+        state: started
+- name: manager node servers
+  hosts: node
+  tasks:
+    - name: update database config
+      copy: src=my.cnf dest=/etc/my/cnf

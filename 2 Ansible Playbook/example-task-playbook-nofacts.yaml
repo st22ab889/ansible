@@ -1,0 +1,16 @@
+---
+- name: the first play example
+  hosts: master
+  # 配置 gather_facts 的值为 no 就是关闭 facts 变量收集功能, 不配置或配置的值为 yes 就是获取 facts 变量
+  gather_facts: no
+  remote_user: root
+  tasks:
+    - name: install nginx package
+      yum: name=nginx state=present
+    - name: copy nginx.conf to remote server
+      copy: src=nginx.conf dest=/etc/nginx/nginx.conf
+    - name: start nginx server
+      systemd:
+        name: nginx
+        enabled: true
+        state: started

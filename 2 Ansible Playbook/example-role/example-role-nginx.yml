@@ -1,0 +1,5 @@
+---
+- name: a playbook used role
+  hosts: master
+  roles:
+    - role-nginx

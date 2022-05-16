@@ -1,0 +1,13 @@
+{#user variable example#}
+welcome host {{ansible_hostname}}, os is {{ansible_os_family}}
+today is {{ansible_date_time.date}}
+cpu core numbers {{ansible_processor_vcpus}}
+
+{#use condition example#}
+{%if ansible_processor_vcpus >1%}
+OS CPU more than one core
+{%endif%}
+
+{%for m in ansible_mounts if m['mount'] != "/"%}
+mount {{m['mount']}}, total size is {{m['size_total']}}, free size is {{m['size_available']}}
+{%endfor%}

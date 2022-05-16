@@ -1,0 +1,35 @@
+---
+- name: task control playbook example
+  hosts: master
+  gather_facts: no
+  vars:
+    createUser:
+      - tomcat
+      - www
+      - mysql
+  tasks:
+    - name: create user
+      user: name={{item}} state=present
+      with_items: "{{createUser}}"
+
+    - name: yum nginx master
+      yum: name=nginx state=present
+
+    - name: update nginx main config
+      copy: src=nginx.conf dest=/etc/nginx/
+
+    - name: add virtualhost config
+      copy: src=www.example.com.conf dest=/etc/nginx/conf.d/
+    
+    - name: check nginx syntax
+      shell: /usr/sbin/nginx -t
+      register: nginx_syntax_result
+
+    - name: print nginx syntax
+      debug: var=nginx_syntax_result
+
+    # when 条件判断和注册变量结合使用
+    - name: start nginx server
+      systemd: name=nginx state=started
+      # 通过条件判断(when)指令去是使用语法校验的结果,只有语法检查通过才会执行"start nginx server"这个TASK
+      when: nginx_syntax_result.rc == 0

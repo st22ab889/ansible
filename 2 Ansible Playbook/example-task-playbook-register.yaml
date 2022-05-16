@@ -1,0 +1,10 @@
+---
+- name: install a package and print the result
+  hosts: master
+  remote_user: root
+  tasks:
+    - name: install nginx package
+      yum: name=nginx state=present
+      register: install_result
+    - name: print result
+      debug: var=install_result

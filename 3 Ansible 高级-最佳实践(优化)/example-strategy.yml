@@ -1,0 +1,8 @@
+- hosts: all
+  #指定执行策略为 free 模式 
+  strategy: free
+  tasks:
+    - name: check hosts
+      ping:
+
+      

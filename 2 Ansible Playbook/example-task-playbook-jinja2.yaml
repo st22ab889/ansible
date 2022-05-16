@@ -1,0 +1,8 @@
+---
+- name: a template example
+  hosts: master
+  remote_user: root
+  tasks:
+    - name: update jinja2 config
+      template: src=config.j2 dest=/tmp/config.conf
+ 

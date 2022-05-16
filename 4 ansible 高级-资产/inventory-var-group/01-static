@@ -1,0 +1,9 @@
+[master]
+192.168.32.100
+#192.168.32.[100-110] # 也可以用这种方式连续指定多台主机
+
+[allHosts:children]
+master
+
+[allHosts:vars]
+name=static-01-vars

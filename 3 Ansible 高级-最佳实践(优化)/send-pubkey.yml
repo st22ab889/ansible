@@ -1,0 +1,16 @@
+---
+- hosts: all
+  # 连接远程主机的用户
+  remote_user: root
+  vars:
+    # 连接远程主机的密码
+    ansible_ssh_pass: upsa
+  # 也可以把远程主机的密码放到一个yml文件中
+  #vars_files:
+  #  - vault-foo.yml
+  tasks:
+    - name: Set authorized key token from file
+      authorized_key:
+        user: root
+        state: present
+        key: "{{ lookup('file', '/root/.ssh/id_rsa.pub') }}"

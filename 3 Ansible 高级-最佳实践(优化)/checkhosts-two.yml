@@ -1,0 +1,10 @@
+- hosts: all
+  #开启 facts,如果设置为 no 或 false 表示关闭获取 facts 变量
+  #gather_facts: no
+  tasks:
+    - name: check hosts
+      ping:
+    - name: debug
+      debug:
+        #var: ansbile_distribution
+        var: ansible_facts

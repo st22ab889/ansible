@@ -1,0 +1,15 @@
+- hosts: all
+  remote_user: root
+  tasks:
+    - name: simulate long running op (5 sec), wait for up to 6sec, poll every 0 sec
+      shell: /bin/sleep 5; hostname -i
+      # 后台执行命令最大时间是 6
+      async: 6
+      # 0 表示不轮询,直接后台运行
+      poll: 0
+      # 默认不会打印到屏幕, 使用注册一个变量, 通过 debug 输出到屏幕
+      register: job
+    - name: show job id
+      # 用 debug 打印到屏幕, 就能看到 ansible_job_id 
+      debug:
+        msg: "Job id is {{ job }}"

@@ -1,0 +1,6 @@
+---
+- name: reload nginx server
+  systemd: name=nginx state=reloaded
+  when:
+    - nginx_syntax_result.rc == 0
+    - nginx_running_result.stat.exists == true

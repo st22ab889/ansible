@@ -1,0 +1,9 @@
+- hosts: all
+  tasks:
+    - name: Get jobs result
+      async_status:
+        jid: '488664303686.50828'
+      register: job_result
+    - name: debug job result
+      debug:
+        var: job_result

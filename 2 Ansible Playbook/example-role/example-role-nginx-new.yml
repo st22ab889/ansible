@@ -1,0 +1,13 @@
+---
+- name: a playbook used role
+  hosts: master
+  tasks:
+    - debug:
+        msg: "before we run our role"
+    # 新形式还是可以给每个 role 传参数、传变量,详见官方文档  
+    # 在 playbook 中给定 import_role 属性，这种方式适用于 Ansible 2.4 及以上
+    - import_role:
+        # 角色的名字
+        name: role-nginx
+    - debug:
+        msg: "after we ran our role"

@@ -1,0 +1,25 @@
+---
+- name: new loop example
+  hosts: master
+  gather_facts: no
+  vars:
+    string_list:
+      - "abc"
+      - "bcd"
+      - "cde"
+    num_list:
+      - 10
+      - 20
+      - 30
+      - 50
+  tasks:
+    - name: show string item
+      debug:
+        var: "{{item}}"
+      loop: "{{string_list}}"
+
+    - name: show num item when item > 20
+      debug:
+        var: "{{item}}"
+      loop: "{{num_list}}"
+      when: item > 20

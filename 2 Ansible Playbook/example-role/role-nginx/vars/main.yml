@@ -1,0 +1,6 @@
+---
+# 注意: 这里不用写 vars
+createUser:
+  - tomcat
+  - www
+  - mysql

@@ -1,0 +1,21 @@
+---
+- name: the first play example
+  hosts: master
+  remote_user: root
+  tasks:
+    - name: install nginx package
+      yum: name=nginx state=present
+    - name: copy nginx.conf to remote server
+      copy: src=nginx.conf dest=/etc/nginx/nginx.conf
+    - name: start nginx server
+      systemd:
+        name: nginx
+        enabled: true
+        state: started
+- name: print facts variable
+  hosts: master
+  tasks: 
+    - name: print facts variable
+      debug:
+        # 使用 Facts 变量
+        msg: "the default IPV4 address is {{ansible_default_ipv4.address}}"
