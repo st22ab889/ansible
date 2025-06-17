@@ -1,0 +1,12 @@
+
+
+![](images/C239A095F8984EA784E51E812D7AE74Aclipboard.png)
+
+
+
+![](images/08572F065EF546EBB8367ECA035D9AD0clipboard.png)
+
+
+
+![](images/C5BB7CE6477145E7B54B1C7B93577DC4clipboard.png)
+
