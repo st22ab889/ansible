@@ -21,7 +21,7 @@ anaconda-ks.cfg  hosts  inventory.ini
 2. command 和 shell 模块
 
 ```javascript
-// 默认会用command 模块运行"echo 'hello'"
+// 未显式指定模块时,默认会用command 模块运行"echo 'hello'", -a (全称 --args) 作用是向远程主机传递命令或参数
 [root@localhost ~]# ansible all -i hosts -a "echo 'hello'"
 192.168.32.100 | CHANGED | rc=0 >>
 hello

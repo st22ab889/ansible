@@ -46,7 +46,7 @@ ansible [PATTERN] -i [inventory] -m [module] -a [argument]
 
 
 ```javascript
-// 使用“:”求并集,求交集会自动去重
+// 使用“:”求并集,求并集会自动去重
 // 注意选择资产加上单引号,这里不加也可以,但是求交集不加单引号就会报错,所以统一加上
 [root@localhost ~]# ansible 'web_servers:db_servers' -i inventory.ini --list-hosts
   hosts (5):

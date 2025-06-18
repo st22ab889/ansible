@@ -11,8 +11,8 @@
 ![](images/752CE9011D1E4B238E5F22C90E3AD61Aclipboard.png)
 
 ```javascript
-centos6 自带的 python 版本应该是2.6
-centos6 自带的 python的版本是 2.7
+centos6 自带的 python 版本应该是 2.6
+centos6 自带的 python 版本应该是 2.7
 ansible新增加的热模块,被管理节点不安装python也能执行一些相关命令,这个用的不多.
 ```
 
