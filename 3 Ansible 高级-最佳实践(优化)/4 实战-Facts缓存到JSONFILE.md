@@ -32,7 +32,7 @@ vi /etc/ansible/ansible.cfg
 //1. gathering 表示获取 fact 的策略,有以下几种:
 //     smart - 默认收集，但如果已经收集则不重新收集
 //     implicit - 默认收集，用gather_facts关闭：False, 这个时默认策略
-//     explicit - 默认情况下不收集，必须说 gather_facts: True
+//     explicit - 默认情况下不收集，必须指定 gather_facts: True
 
 // 2. fact_caching 表示把 fact 的持久化形式, 有以下几个值:
 //     memory

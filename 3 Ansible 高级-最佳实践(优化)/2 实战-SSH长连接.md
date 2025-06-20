@@ -11,7 +11,7 @@ OpenSSH_7.4p1, OpenSSL 1.0.2k-fips  26 Jan 2017
 
 ```javascript
 // 如果没有安装 SSH,使用下面的命令安装
-// yum provides反查询文件在什么包中
+// yum provides 查询 ssh 属于哪个软件包
 yum provides ssh
 yum install openssh-clients
 // 如果要升级 ssh, 使用下面的命令

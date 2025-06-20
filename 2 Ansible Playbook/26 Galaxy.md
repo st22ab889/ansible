@@ -133,7 +133,7 @@ optional arguments:
 2. Galaxy 常用指令
 
 ```javascript
-// 在 galaxy 上搜索动向的 ROlE
+// 在 galaxy 上搜索共享的 ROlE
 ansible-galaxy role search {roleName}
 
 // 安装 galaxy 上共享的 ROlE
