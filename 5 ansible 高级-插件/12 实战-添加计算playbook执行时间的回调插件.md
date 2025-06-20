@@ -80,7 +80,7 @@ Playbook run took 0 days, 0 hours, 0 minutes, 2 seconds
 // 将 /etc/ansible/ansible.cfg 中的 callback_whitelist 修改为如下:
 callback_whitelist = timer,profile_roles
 
-// 注意：因为 profile_roles 和 profile_tasks 都一样,所以第2行配置等价于:
+// 注意：因为 profile_roles 和 profile_tasks 都一样,所以上面的配置等价于:
 callback_whitelist = timer,profile_tasks    
 ```
 
